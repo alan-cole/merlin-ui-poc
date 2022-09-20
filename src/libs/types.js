@@ -1,3 +1,5 @@
+// Provides the field data for each Merlin Type.
+// https://salsadigitalauorg.github.io/merlin-framework/docs/type-text
 export default {
   'text': [
     { type: 'text', name: 'field' },

@@ -1,11 +1,11 @@
 <template>
   <div class="typeform">
-    {{ fields }}
+    <!-- {{ fields }} -->
     <template v-for="(field, idx) in fields" :key="field.id">
       <Field
         :field="field"
-        :fieldid="idx"
-        :showDelete="this.fields.length > 1"
+        :fieldId="idx"
+        :showDelete="true"
         @change="onFieldChange"
         @deleteField="deleteClick"
       />
@@ -26,10 +26,12 @@ export default {
   data () {
     return {
       counter: 0,
+      // TODO - Fields should be parsable to create the YML config.
+      // https://www.npmjs.com/package/yaml
+      // The current model should be improved to allow that.
       fields: [
         { id: 0, type: 'type', name: 'type' }
-      ],
-      formModel: {}
+      ]
     }
   },
   methods: {
@@ -40,12 +42,7 @@ export default {
       this.fields[idx].value = val
     },
     deleteClick (idx) {
-      if (this.fields.length > 1) {
-        this.fields.splice(idx, 1)
-      }
-      else {
-        alert('Can\'t delete the last one')
-      }
+      this.fields.splice(idx, 1)
     }
   }
 }
