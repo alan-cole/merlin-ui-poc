@@ -27,7 +27,7 @@ export default {
     return {
       counter: 0,
       // TODO - Fields should be parsable to create the YML config.
-      // https://www.npmjs.com/package/yaml
+      // https://www.npmjs.com/package/js-yaml/v/0.2.0
       // The current model should be improved to allow that.
       fields: [
         { id: 0, type: 'type', name: 'type' }
